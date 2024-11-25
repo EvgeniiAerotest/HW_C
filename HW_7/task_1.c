@@ -13,7 +13,6 @@ int main(void)
  printf("%d ", SumRec(n));   
 }
 
-
 int SumRec(int n)
 {
  if(n>0)
