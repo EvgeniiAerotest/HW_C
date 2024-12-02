@@ -45,7 +45,6 @@ void SwapArr(int i,int j,int *arr)
  arr[j]   = temp;
 }
 
-
 void Sort(int len,int *arr)
 {
  for (int i = 0; i < len; i++)
