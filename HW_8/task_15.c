@@ -20,8 +20,6 @@ int main(void)
  return 0;
 }
 
-
-
 int Input(int len, int* arr) 
 {
  int i;
@@ -36,8 +34,6 @@ void Print(int len, int *arr)
  for (i = 0; i < len; i++)
     printf("%d ",arr[i]);
 }
-
-
 
 void Sort_pos_neg(int len,int *arr)
 {
