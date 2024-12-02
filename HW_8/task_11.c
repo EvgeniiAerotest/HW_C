@@ -24,7 +24,6 @@ int main(void)
  return 0;
 }
 
-
 int Input(int len, int* arr) 
 {
  int i;
@@ -47,7 +46,6 @@ void SwapArr(int i,int j,int *arr)
  arr[i]   = arr[j];
  arr[j]   = temp;
 }
-
 
 void Sort_ld(int len,int *arr)
 {
