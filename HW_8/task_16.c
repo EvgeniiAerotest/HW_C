@@ -65,30 +65,29 @@ void Sort(int len,int *arr)
 
 void M_often_Number(int len,int *arr)
 {
-	int count = 1;
-	int m_count=0;
-	int m_often_num=0;
-    for (int i = 1; i < len; i++) 
-    {
-     if (arr[i] == arr[i - 1])
-     {
-       count++;
-     }
-     else
-     {
-      if (count > m_count)
-      {
-        m_count = count;
-        m_often_num = arr[i - 1];
-      }
-      count = 1;
-     }
-    }
-    if (count > m_count)
-    {
-      m_count = count;
-      m_often_num = arr[9];
-    }
-    printf("%d\n", m_often_num);
+ int count = 1;
+ int m_count=0;
+ int m_often_num=0;
+ 
+ for (int i = 1; i < len; i++) 
+ {
+  if (arr[i] == arr[i - 1])
+    count++;
+  else
+  {
+   if (count > m_count)
+   {
+    m_count = count;
+    m_often_num = arr[i - 1];
+   }
+   count = 1;
+  }
+ }
+ if (count > m_count)
+ {
+   m_count = count;
+   m_often_num = arr[9];
+ }
+ printf("%d\n", m_often_num);
 }
 
