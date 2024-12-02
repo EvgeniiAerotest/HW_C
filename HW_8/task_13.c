@@ -21,8 +21,6 @@ int main(void)
  return 0;
 }
 
-
-
 int Input(int len, int* arr) 
 {
  int i;
@@ -39,7 +37,6 @@ void Print(int len, int *arr)
  printf("\n");
 }
 
-
 void Sort_2d0(int len,int *arr)
 {
   int temp_arr[10] = {0};
@@ -50,7 +47,7 @@ void Sort_2d0(int len,int *arr)
     {
       temp_arr[count] = arr[i];
       count++; 
-	}
+    }
   }
   int result_arr[count];
   for(int i=0; i<count; i++)
