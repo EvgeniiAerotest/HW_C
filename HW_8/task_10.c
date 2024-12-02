@@ -22,7 +22,6 @@ int main(void)
  return 0;
 }
 
-
 int Input(int len, int* arr) 
 {
  int i;
