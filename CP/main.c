@@ -19,6 +19,7 @@ int main(int argc, char **argv)
   int month_int = 0;
   int p_flag = 0;
   int m_flag = 0;
+  int f_flag = 0;
   char print_mode[2];
   char name[] = "temperature_small.csv";
 
@@ -27,19 +28,11 @@ int main(int argc, char **argv)
     switch (rez)
     {
     case 'h':
-      printf("This is description of this application usage:\n");
-      printf("-h This help text;\n");
-      printf("-f Specify data file;\n");
-      printf("   if clear file temperature_small.csv will be loaded\n");
-      printf("-m Specify month to print statistics;\n");
-      printf("   if clear all monthes and year statistics will be printed\n");
-      printf("-p Specify file print mode: \n");
-      printf("   T - sort data file by temperature\n");
-      printf("   D - sort data file by date\n");
-      printf("   if clear data file will not be printed\n");
+      print_help();
       break;
     case 'f':
       strcpy(name, optarg);
+      f_flag = 1;
       break;
     case 'm':
       month_int = atoi(optarg);
@@ -55,25 +48,32 @@ int main(int argc, char **argv)
     };
   };
 
-  data_count = load_data_file(name, info);
-  if (data_count >= 0)
+  if (p_flag == 0 && f_flag == 0 && m_flag == 0) // no arguments
   {
-    if (p_flag == 1)
+    print_help();
+  }
+  else
+  {
+    data_count = load_data_file(name, info);
+    if (data_count >= 0)
     {
-      if (print_mode[0] == 'T')
-        SortByT(info, data_count);
-      else if (print_mode[0] == 'D')
-        SortByDate(info, data_count);
-      print(info, data_count);
-    }
-    if (m_flag == 1)
-    {
-      print_one_month(info, data_count, month_int);
-    }
-    else
-    {
-      print_all_monthes(info, data_count);
-      print_year(info, data_count);
+      if (p_flag == 1) // if print data mode specified
+      {
+        if (print_mode[0] == 'T')
+          SortByT(info, data_count);
+        else if (print_mode[0] == 'D')
+          SortByDate(info, data_count);
+        print(info, data_count);
+      }
+      if (m_flag == 1) // month specified
+      {
+        print_one_month(info, data_count, month_int);
+      }
+      else // month not specified
+      {
+        print_all_monthes(info, data_count);
+        print_year(info, data_count);
+      }
     }
   }
   free(info);
