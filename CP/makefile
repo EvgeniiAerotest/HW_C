@@ -12,3 +12,6 @@ temp_api.o: temp_api.c
 clean:
 	del *.o
 	del prog.exe
+
+
+	
