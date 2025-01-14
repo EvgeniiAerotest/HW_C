@@ -221,7 +221,7 @@ int load_data_file(char *filename, struct sensor *info)
     FILE *open;
     open = fopen(filename, "r");
     if (open == NULL)
-    {   
+    {
         printf("file open error");
         return -1;
     }
@@ -269,4 +269,17 @@ int load_data_file(char *filename, struct sensor *info)
     }
 
     return data_count;
+}
+void print_help(void)
+{
+    printf("This is description of this application usage:\n");
+    printf("-h or no arguments: this help text;\n");
+    printf("-f Specify data file;\n");
+    printf("   if clear file temperature_small.csv will be loaded\n");
+    printf("-m Specify month to print statistics;\n");
+    printf("   if clear all monthes and year statistics will be printed\n");
+    printf("-p Specify file print mode: \n");
+    printf("   T - sort data file by temperature\n");
+    printf("   D - sort data file by date\n");
+    printf("   if clear data file will not be printed\n");
 }
