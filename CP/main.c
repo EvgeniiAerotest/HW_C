@@ -13,7 +13,7 @@ int main(int argc, char **argv)
     printf("memory allocation error\n");
     exit(1);
   }
-  int minus_flag = 0;
+  int minus_flag = 0;  //
   int data_count = 0;
   int rez = 0;
   int month_int = 0;
@@ -75,3 +75,6 @@ int main(int argc, char **argv)
   free(info);
   return 0;
 }
+
+
+
