@@ -221,7 +221,10 @@ int load_data_file(char *filename, struct sensor *info)
     FILE *open;
     open = fopen(filename, "r");
     if (open == NULL)
-        return 99;
+    {   
+        printf("file open error");
+        return -1;
+    }
     int counter = 0;
     int arr[6] = {0};
     char ch;
